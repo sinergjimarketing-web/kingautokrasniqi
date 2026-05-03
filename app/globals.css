@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: dark; }
+
+body {
+  @apply bg-charcoal font-body text-white antialiased;
+  background-image:
+    radial-gradient(circle at 12% 10%, rgba(198, 168, 106, 0.16), transparent 30%),
+    radial-gradient(circle at 88% 0%, rgba(255, 255, 255, 0.07), transparent 22%),
+    linear-gradient(to bottom, #090909, #0d0d0f 40%, #0b0b0d);
+}
+
+@layer components {
+  .luxury-border { border: 1px solid rgba(198, 168, 106, 0.34); }
+  .luxury-card { @apply luxury-border overflow-hidden rounded-2xl bg-white/[0.03] transition duration-300 hover:-translate-y-1.5 hover:shadow-glow; }
+  .section-title { @apply font-display text-3xl text-gold md:text-4xl; }
+  .section-subtitle { @apply mt-4 max-w-2xl text-sm text-white/70 md:text-base; }
+  .input-field { @apply w-full rounded-lg border border-white/20 bg-black/40 px-4 py-3 text-sm text-white placeholder:text-white/50 outline-none transition focus:border-gold focus:ring-1 focus:ring-gold; }
+  .gold-btn { @apply inline-flex items-center rounded-full border border-gold bg-gold px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-black transition hover:brightness-110; }
+  .ghost-btn { @apply inline-flex items-center rounded-full border border-gold/70 px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-gold transition hover:bg-gold hover:text-black; }
+}
